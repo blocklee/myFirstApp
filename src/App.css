@@ -19,7 +19,7 @@
   margin: 10px;
 }
 
-label.sign {
+label.signInput {
   position: relative;
   left: -2rem;
   /*margin-right: 5%;*/
@@ -27,11 +27,17 @@ label.sign {
   /*text-align: right;*/
 }
 
+label.signResult {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 label.verify {
   position: relative;
   left: -2rem;
   /*margin-right: 2rem;*/
 }
+
 
 
 .input {

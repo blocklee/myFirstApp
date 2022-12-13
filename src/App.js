@@ -2,12 +2,12 @@ import {useEffect, useState} from 'react';
 import './App.css';
 import logo from './logo.svg';
 import { ethers } from "ethers";
-// import { recoverPersonalSignature } from 'eth-sig-util';
 
 
 function App() {
 
     const [currentAccount, setCurrentAccount] = useState(null);
+    const [signature, setSignature] = useState(null);
 
     const checkWalletIsConnected = async () => {
         const { ethereum } = window;
@@ -46,8 +46,10 @@ function App() {
         }
     }
 
+
     const signMessageHandler = async () => {
         const msg = document.getElementById("msg").value;
+
         try {
             const { ethereum } = window;
 
@@ -56,11 +58,11 @@ function App() {
                 const signer = provider.getSigner();
                 let signature = await signer.signMessage(msg);
                 console.log(signature);
-                // return signature;
-                // return (
-                //     window.document.write(signature)
-                // )
-                alert("Signature:\n" + signature)
+                // let alertMsg = "Signature:\n" + signature;
+                setSignature(signature);
+
+                // alert("Signature:\n" + signature)
+                // Alert.alert(alertMsg)
             } else {
                 console.log("Ethereum object does not exist");
             }
@@ -80,9 +82,15 @@ function App() {
     const signMessageButton = () => {
         return (
             <div>
-                <label className={"sign"}>
+                <label className={"signInput"}>
                     Message:
                     <input inputMode={"text"} id={"msg"} className={"input"} alt={"input the message"}/>
+                </label>
+                <br/>
+                <label className={"signResult"}>
+                    Signature is:
+                    <br/>
+                    {signature}
                 </label>
                 <br/>
                 <button onClick={() => signMessageHandler()} className='cta-button sign-message-button'>
@@ -100,10 +108,9 @@ function App() {
     //         return false;
     //     }
     // }
-    String.prototype.compare = function(str) {
-        return this.toLowerCase() === str.toLowerCase();
-    }
-
+    // String.prototype.compare = function(str) {
+    //     return this.toLowerCase() === str.toLowerCase();
+    // }
 
     const verifySignatureHandler = () => {
 
@@ -116,7 +123,8 @@ function App() {
         console.log("The signer is:", signer)
         // alert("The signer is:\n" + signer)
 
-        if (address.compare(signer)) {
+        // if (address.compare(signer)) {
+        if (address.toLowerCase() === signer.toLowerCase()) {
             alert("Signature verification success!")
         } else {
             alert("The address is not the singer!")

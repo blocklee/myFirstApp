@@ -1,5 +1,6 @@
 // 一个react 实现弹窗相关的代码
-import React, {useEffect, useState} from 'react';
+
+import {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom'
 
 export default function Dialog(props) {
