@@ -1,10 +1,66 @@
 .App {
   text-align: center;
+  margin: 100px 0;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.cta-button {
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  min-width: 1rem;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+label.sign {
+  position: relative;
+  left: -2rem;
+  /*margin-right: 5%;*/
+  /*margin-top: 10px;*/
+  /*text-align: right;*/
+}
+
+label.verify {
+  position: relative;
+  left: -2rem;
+  /*margin-right: 2rem;*/
+}
+
+
+.input {
+  text-align: center;
+  caret-color: red;
+  font: 16px "Helvetica", "Arial", "sans-serif";
+  padding: 0.5rem 0;
+  margin: 5px 5px;
+  min-width: 300px;
+}
+
+.connect-wallet-button {
+  background: rgb(32, 129, 226);
+}
+
+.sign-message-button {
+  background: darkmagenta;
+}
+
+.verify-signature-button {
+  background: darkmagenta;
+}
+
+/*.sign-message {*/
+/*  padding: 100px;*/
+/*}*/
+
+.verify-signature {
+  padding-top: 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,20 +69,20 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/*.App-header {*/
+/*  background-color: white;!*#282c34;*!*/
+/*  min-height: 30vh;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  font-size: calc(10px + 2vmin);*/
+/*  color: white;*/
+/*}*/
 
-.App-link {
-  color: #61dafb;
-}
+/*.App-link {*/
+/*  color: #61dafb;*/
+/*}*/
 
 @keyframes App-logo-spin {
   from {
